@@ -38,12 +38,29 @@ function App() {
         console.log(List)
     }
 
+    let textInput = React.useRef();
+    const Add =(e)=>{
+        console.log(textInput)        
+        let newTask = {
+        text : textInput.current.value,
+        state : false,
+        id : (List.length + 1 )
+        } 
+        let  newlist = [...List]
+        newlist.push(newTask)               
+        console.log(newlist)
+        setList(newlist)
+        e.preventDefault()
+        textInput.current.value=""
+        
+    }
+
   
 
   
   return (
     <div>
-    <AddToDo  List={List} setList={setList} />
+    <AddToDo  List={List} setList={setList} Add={Add} />
     <ListToDo>
         { List.map(element=>(
       <ItemToDo 

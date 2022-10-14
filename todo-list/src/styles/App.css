@@ -1,0 +1,12 @@
+.Bigbox{
+    flex-direction: row;
+    background-color: aquamarine;
+}
+
+#Box1{
+    background-color: blueviolet;
+}
+
+#Box2{
+    background-color: beige;
+}

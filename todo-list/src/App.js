@@ -3,6 +3,7 @@ import {ItemToDo} from './Components/ItemToDo'
 import {ListToDo} from './Components/ListToDo'
 import {AddToDo} from './Components/AddToDo'
 import {SearchToDo} from './Components/SearchToDo'
+import './styles/App.css';
 
 
 
@@ -39,6 +40,7 @@ function App() {
     }
 
     let textInput = React.useRef();
+
     const Add =(e)=>{
         console.log(textInput)        
         let newTask = {
@@ -59,9 +61,10 @@ function App() {
 
   
   return (
-    <div>
-    <AddToDo  List={List} setList={setList} Add={Add} />
-    <ListToDo>
+    <div className="Bigbox">
+      <div className="Box1">
+      <AddToDo  List={List} setList={setList} onSubmit={Add} textInput={textInput} />
+      <ListToDo List={List} setList={setList}>
         { List.map(element=>(
       <ItemToDo 
         key={element.id}
@@ -70,8 +73,13 @@ function App() {
         onDelete= {()=>Delete(element.id)}>   
       </ItemToDo>  
     ))}  
-    </ListToDo>     
-    <SearchToDo />
+    </ListToDo>   
+
+      </div>
+      <div className="Box2">
+        <SearchToDo />
+      </div>
+    
     </div>
   );
 }

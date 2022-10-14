@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+
 
 function AddToDo(props){
-    let List= props.List; 
-    let textInput = useRef();
+
+        /*let textInput = useRef();
     const Add =(e)=>{
         console.log(textInput)        
         let newTask = {
@@ -17,12 +17,12 @@ function AddToDo(props){
         e.preventDefault()
         textInput.current.value=""
         
-    }
+    }*/
     
 return(
     <div>
-        <form onSubmit={Add}>
-            <input placeholder="Ingrese Tarea" type="input" ref={textInput} ></input>
+        <form onSubmit={props.onSubmit} >
+            <input placeholder="Ingrese Tarea" type="input" ref={props.textInput} ></input>
             <button type="text"  >+</button>
         </form>
         

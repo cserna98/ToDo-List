@@ -21,17 +21,40 @@ function App() {
   {
     text : 'Estudiar JAVA' ,
     State : false,
-    id : 2
+    id : 3
   }
   ]
 
-  
+
   let [List,setList] = React.useState(taskList)
-  console.log(List)
+    console.log(List)
+    const Delete =(id)=>{
+        const TaskIndex = List.findIndex( task => task.id === id);  
+        console.log(TaskIndex)
+        let newList = [...List]
+        newList.splice(TaskIndex, 1)
+        console.log(newList)
+        setList(newList)
+        console.log(List)
+    }
+
+  
+
+  
   return (
     <div>
-    <AddToDo/>
-    <ListToDo List={List}  />
+    <AddToDo  List={List} setList={setList} />
+    <ListToDo>
+        { List.map(element=>(
+      <ItemToDo 
+        key={element.id}
+        text={element.text}
+        id={element.id}
+        onDelete= {()=>Delete(element.id)}>   
+      </ItemToDo>  
+    ))}  
+    </ListToDo>     
+    <SearchToDo />
     </div>
   );
 }

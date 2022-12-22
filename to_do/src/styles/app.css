@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #dee8eb;
+    --secondary-color: #ccc;
+    --text-color: #333;
+    --warning-color: #ff7676;
+  }
+  
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    input {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    button {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }         
+  
+  
+  .task-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    }
+
+.task {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    padding-left: 50px;
+    font-size: 16px;    
+    cursor: pointer; 
+    justify-content: flex-start;
+}     
+
+    button {
+    background-color: var(--warning-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    }  
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 80%;
+        margin: 0 auto;
+      }   
+
+      .list, .Find{
+        display: flex;
+        flex-direction: column;        
+        padding: 25px;
+        float: left;
+        align-items: center;
+      }
+        
